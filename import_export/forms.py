@@ -12,7 +12,7 @@ class ImportForm(forms.Form):
         label=_('File to import')
         )
     input_format = forms.ChoiceField(
-        label=_('Format'),
+        label=_(' '),
         choices=(),
         )
 
@@ -22,7 +22,7 @@ class ImportForm(forms.Form):
         for i, f in enumerate(import_formats):
             choices.append((str(i), f().get_title(),))
         if len(import_formats) > 1:
-            choices.insert(0, ('', '---'))
+            choices.insert(0, ('1', 'xls'))
 
         self.fields['input_format'].choices = choices
 
